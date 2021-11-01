@@ -1,0 +1,87 @@
+  
+    1.)Get all the countries with a population of less than 2 lakhs using Filter function
+
+ 
+            a.) Print the total population of countries using reduce function.
+
+           index.html
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src='js script.js'></script>
+</body>
+</html>
+
+
+           js script.js
+
+
+ //step01: create a XHR object
+//request has to be use in whole program
+var request=new XMLHttpRequest();
+//step02: create a connection
+//true optional;
+request.open('GET','https://restcountries.com/v3.1/all',true);
+//step03: send a request
+//push for the api to send request to server
+request.send();
+//step04: 
+//once the data succesgully request
+//http:200
+request.onload=function(){
+    var data=JSON.parse(request.response);
+    console.log(data);
+    var res =data.filter((ele)=>ele.population<200000);
+    console.log(res);
+
+}
+
+
+
+b.)Get all the countries from Asia continent /region using Filter function.
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="js script.js"></script>
+</body>
+</html>
+ 
+    
+    <js script.js>
+
+//step01: create a XHR object
+//request has to be use in whole program
+var request=new XMLHttpRequest();
+//step02: create a connection
+//true optional;
+request.open('GET','https://restcountries.com/v3.1/all',true);
+//step03: send a request
+//push for the api to send request to server
+request.send();
+//step04: 
+//once the data succesgully request
+//http:200
+request.onload=function(){
+    var data=JSON.parse(request.response);
+    console.log(data);
+    let asianCountries = countries.filter(country => return country.continent === 'Asia';
+        console.log(asianCountries); 
+}
+
+
+   
+          
